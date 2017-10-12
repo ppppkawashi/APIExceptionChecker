@@ -1,21 +1,22 @@
 # APIリクエスト例外チェック
 
 全てのURLに片っ端から例外が起こりそうな文字列を送り、500エラーが返ってきた場合は記録する。
-まだ GET しか対応してない。
 
 # 使い方
 
 最初に下記のことを行う。
 
-- `urls.txt` を作成し、正常なGETパラメータ付きURLをテストしたい分だけ記述する
+- `urls.txt` を作成し、正常なパラメータ付きURLをテストしたい分だけ記述する
 - `errors.txt` に自動で送りつけたい例外が起こりそうな文字列を記述する
 
 `urls.txt` の例:
 
 ```
-# コメント
-http://example.org/hoge?param1=1&param=2
-http://example.org/fuga?param1=1
+# GETリクエスト
+GET:http://example.org/hoge?param1=1&param=2
+
+# POSTリクエスト (getと同じ方式で記述する)
+POST:http://example.org/fuga?param1=1
 ```
 
 `errors.txt` の例:
